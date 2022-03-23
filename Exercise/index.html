@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <script src="libs/echarts.min.js"></script>
+    <title>Activity 5</title>
+    <script src="../js/d3.js"></script>
+    <style>
+    </style>
+</head>
+
+<body style="height: 100%; margin: 0">
+
+    <div id="container" style="height: 100%"></div>
+    <script type="text/javascript">
+        let dom = document.getElementById("container"); // select container
+        let treeMap = echarts.init(dom); // initiate echarts object
+
+        treeMap.setOption({
+            title: {
+                text: 'Activity 5: E-Charts by Abhijot Bedi (01908371)',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+
+            series: [{
+                type: 'treemap',
+                visibleMin: 300,
+                label: {
+                    show: true,
+                    formatter: '{b}'
+                },
+                upperLabel: {
+                    show: true,
+                    height: 30
+                },
+                levels: [{
+                        itemStyle: {
+                            borderColor: '#555',
+                            borderWidth: 0,
+                            gapWidth: 10
+                        },
+                        upperLabel: {
+                            show: false
+                        }
+                    }, {
+                        itemStyle: {
+                            borderColor: '#52AB80',
+                            borderWidth: 5,
+                            gapWidth: 5
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                borderColor: '#ccc'
+                            }
+                        }
+                    }, {
+                        itemStyle: {
+                            borderColor: '#e8aa63',
+                            borderWidth: 5,
+                            gapWidth: 1
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                borderColor: '#ccc'
+                            }
+                        }
+                    }, {
+                        itemStyle: {
+                            borderColor: '#F0F4F3',
+                            borderWidth: 5,
+                            gapWidth: 1
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                borderColor: '#ccc'
+                            }
+                        }
+                    }, {
+                        colorSaturation: [0.3, 0.55],
+                        itemStyle: {
+                            borderWidth: 5,
+                            gapWidth: 1,
+                            borderColorSaturation: 0.7
+                        }
+                    }],
+
+                data: [{
+                    name: 'A',
+                    value: 200,
+                    children: [{
+                        name: 'B',
+                        value: 80,
+                        children: [{
+                            name: 'D',
+                            value: 30
+                        }, {
+                            name: 'E',
+                            value: 50
+                        }]
+                    }, {
+                        name: 'C',
+                        value: 120,
+                        children: [{
+                            name: 'F',
+                            value: 20
+                        }, {
+                            name: 'G',
+                            value: 40
+                        }, {
+                            name: 'H',
+                            value: 60
+                        }]
+                    }]
+                }]
+            }]
+        },true);
+
+    </script>
+</body>
+</html>
